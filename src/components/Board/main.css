@@ -1,0 +1,17 @@
+.board-enter {
+    opacity: 0.01;
+}
+
+.board-enter.board-enter-active {
+    opacity: 1;
+    transition: opacity 500ms ease-in;
+}
+
+.board-exit {
+    opacity: 1;
+}
+
+.board-exit.board-exit-active {
+    opacity: 0.01;
+    transition: opacity 500ms ease-in;
+}
