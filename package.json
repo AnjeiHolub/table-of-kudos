@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "predeploy": "npm run dev",
-    "deploy": "gh-pages -b master -d build",
+    "deploy": "gh-pages -d build",
     "start": "concurrently \"npm run dev\" \"npm run api\"",
     "api": "node simple_api/server.js",
     "dev": "webpack-dev-server --hot --inline",
@@ -20,7 +20,7 @@
   "bugs": {
     "url": "https://github.com/AnjeiHolub/table-of-kudos"
   },
-  "homepage": "https://anjeiholub.github.io/table-of-kudos",
+  "homepage": "https://anjeiholub.github.io/table-of-kudos/",
   "devDependencies": {
     "babel-core": "^6.13.2",
     "babel-loader": "^6.2.4",
