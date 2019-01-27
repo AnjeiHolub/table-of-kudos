@@ -4,11 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "predeploy": "npm run dev",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "start": "concurrently \"npm run dev\" \"npm run api\"",
     "api": "node simple_api/server.js",
-    "dev": "webpack-dev-server --mode production",
+    "dev": "webpack-dev-server --hot --inline",
     "build": "webpack"
   },
   "repository": {
