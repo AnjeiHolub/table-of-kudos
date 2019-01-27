@@ -29,7 +29,7 @@ class KudosForm extends Component {
     }
 
     handleSubmit = (event) => {
-        event.preventDefault;
+        event.preventDefault();
         const {user, text} = this.state;
         const {boardId} = this.props;
 

@@ -2,9 +2,9 @@ import {INCREMENT} from '../constants';
 import {BOARD_DELETE} from '../constants';
 import {CHANGE_DATE_RANGE} from '../constants';
 import {CHANGE_SELECTION} from '../constants';
-import {ADD_KUDOS} from '../constants';
+import {ADD_KUDOSE} from '../constants';
 import {LOAD_ALL_BOARDS, LOAD_BOARD, START, SUCCESS, FAIL, LOAD_KUDOSES_BOARD, LOAD_KUDOSES_FOR_PAGE} from '../constants';
-import {push} from 'react-router-redux';
+import {replace} from 'react-router-redux';
 
 export function increment () {
     return {
@@ -44,7 +44,7 @@ export function changeSelection (selected) {
 
 export function addKudos ({user, text, boardId}) {
     return {
-        type: ADD_KUDOS,
+        type: ADD_KUDOSE,
         payload: {
             kudos: {
                 user: user,

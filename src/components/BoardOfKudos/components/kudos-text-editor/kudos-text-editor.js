@@ -13,7 +13,6 @@
         this._onFocusOut = this._onFocusOut.bind(this);
         this._onEntryHead = this._onEntryHead.bind(this);
         this._onKeyPress = this._onKeyPress.bind(this);
-        this.editInput;
         this._initEvents();
 
         this.coordsEditArea = this.getCoordsElement(this.workingArea);
@@ -118,8 +117,8 @@
         let box = elem.getBoundingClientRect();
 
         return {
-          top: box.top + pageYOffset,
-          left: box.left + pageXOffset
+          top: box.top + window.pageYOffset,
+          left: box.left + window.pageXOffset
         };
       }
 
@@ -138,7 +137,7 @@
        * Wyświetlenie wpisanego teksu w drzewie DOM
        */
 
-      _onKeyPress (item) {
+      _onKeyPress (event) {
         this.inputTextEditor.innerHTML += this._onEntryHead(event);
       }
 

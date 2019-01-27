@@ -86,15 +86,7 @@
             try {
                 return new XMLHttpRequest ();
             } catch (trymicrosoft) {
-                try {
-                    return new ActiveXObject("Msxm12.XMLHTTP");
-                } catch (othermicrosoft) {
-                    try {
-                        return new ActiveXObject("Microsoft.XMLHTTP");
-                    } catch (failed) {
-                        return null;
-                    }
-                }
+                return false;
             }
         }
 

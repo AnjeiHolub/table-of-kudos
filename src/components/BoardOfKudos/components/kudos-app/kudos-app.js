@@ -8,7 +8,6 @@
             this._onMouseDown = this._onMouseDown.bind(this);
             this._onMouseUp = this._onMouseUp.bind(this);
             this._initEvents();
-            this.data;
             this.dragObject = {};
         }
 
@@ -108,7 +107,13 @@
                 for (let i = 0, length = this.data.kudoses.length; i <=length; i = i + 1) {
                     if (this.data.kudoses[i].id === item.data.id) {
                         this.data.kudoses.splice(i, 1);
-                        return;
+                        break;
+                    }
+                }
+                for (let i = 0, length = this.data.board.kudoses.length; i <=length; i = i + 1) {
+                    if (this.data.board.kudoses[i] === item.data.id) {
+                        this.data.board.kudoses.splice(i, 1);
+                        break;
                     }
                 }
             }
@@ -137,7 +142,7 @@
                 // zaczynamy przesunięcie
                 this.dragObject.avatar = this.createAvatar(event); // tworzymy avatar
                 if (!this.dragObject.avatar) { // anulowanie przeniesienia, nie można złapać element za tą część
-                    dragObject = {};
+                    this.dragObject = {};
                     return;
                 }
 
@@ -207,7 +212,7 @@
             if (!dropElem) {
               this.onDragCancel(this.dragObject);
             } else {
-              this.onDragEnd(this.dragObject, dropElem);
+              this.onDragEnd(this.dragObject, dropElem, event);
             }
             this.trigger('finishDrag');
         }
@@ -236,7 +241,7 @@
             return elem.closest('[data-status="trash"]') || elem.closest('[data-status="board"]');
         }
 
-        onDragEnd (dragObject, dropElem) {
+        onDragEnd (dragObject, dropElem, event) {
             if (this.dragObject.avatar.endPoint === "board") { // mouseup odbył się nad tablicą
                 let boardElement = document.querySelector('[data-status="board"]'),
                     coordsBoard = this.getCoords(boardElement),

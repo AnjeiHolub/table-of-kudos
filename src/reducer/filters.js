@@ -16,7 +16,9 @@ export default (filters = defaultFilters, action) => {
 
     switch (type) {
         case BOARD_DELETE:
-            return {...filters, selected: filters.selected.filter((selectedBoard) => {selectedBoard.id !== payload.id})};
+            return {...filters, selected: filters.selected.filter((selectedBoard) => {
+                return selectedBoard.id !== payload.id
+            })};
         case CHANGE_DATE_RANGE: 
             return {...filters, dateRange: payload.dateRange};
         case CHANGE_SELECTION:

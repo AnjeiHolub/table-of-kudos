@@ -10,7 +10,6 @@
             this.render();
             this.form = this.el.querySelector('.form');
             this.editArea = this.el.querySelector('.edit-area');
-            this.editKudosArea;
             this._initEvents();
 
         }
@@ -117,6 +116,8 @@
         _onAddClick(item) {
             this.data.fieldsContent = this._handelContentEditKudos();
             this.data.id = this.generateId();
+            this.data.text = "text" + this.generateId(); //добавить поля в редактор для заполнения
+            this.data.user = "user" + this.generateId(); //добавить поля в редактор для заполнения
             this.close();
             this.trigger('kudosReadyTransfer', this.data);
         }

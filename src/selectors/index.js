@@ -30,7 +30,7 @@ export const filtratedBoardsSelector = createSelector(boardsGetter, filtersGette
 
         if (!selected.length || selectState) { //не пусто ли список и константа selectState
             if (from && to) {  //выбраны ли даты
-                if (published > from && upblished < to) { //помещается ли дата публикации статьи в выбранном периоде на календаре
+                if (published > from && published < to) { //помещается ли дата публикации статьи в выбранном периоде на календаре
                     return true;
                 } else {
                     return false;

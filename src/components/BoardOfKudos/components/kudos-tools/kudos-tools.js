@@ -7,9 +7,7 @@
       this._onClick = this._onClick.bind(this);
       this._renderKudosEditArea = renderKudosEditArea;
       this.toolsField = el.querySelector('.tools-field');
-      this.data;
       this.tools = el.querySelector('.tools');
-      this.form;
       this._initEvents();
 
     }
